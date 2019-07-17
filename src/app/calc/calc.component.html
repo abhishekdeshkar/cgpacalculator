@@ -1,0 +1,266 @@
+<div class="card">
+  <h5 class="card-header bg-primary text-white"> <i class="fas fa-user-graduate"></i> &nbsp; Trimester - GPA Caculator</h5>
+  <div class="card-body">
+    
+        <form>
+            <!-- (change)="filterForeCasts($event.target.value)" -->
+            <div class="form-group">
+                <label>Specialization</label>
+                <select [(ngModel)]="mainData.spec"  name="specialization" class="form-control" id="specialization">
+                    <option value="Select a specialization">Select a specialization</option>
+                    <option value="dsa">Data Science & Analytics</option>
+                    <option value="nmcs">Network Management & Cyber Security</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Trimester</label>
+                <select [(ngModel)]="mainData.trimester" (change)="SemesterChanged()" name="trimester" class="form-control" >
+                    <option value="Select a Trimester">Select a Trimester</option>
+                    <option value="sem1">Trimester 1</option>
+                    <option value="sem2">Trimester 2</option>
+                    <option value="sem3">Trimester 3</option>
+                </select>
+            </div>
+
+            
+            <div id="Trimester1Dsa" [hidden]="mainData.spec!='dsa' || mainData.trimester!='sem1'">
+        
+                <div class="form-group">
+                    <label for="Research Methodology">Research Methodology</label>
+                    <input type="number" name="rm" id="rm" [(ngModel)]="formData.rm" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Algorithms">Algorithms</label>
+                    <input type="number" name="alg" id="alg" [(ngModel)]="formData.alg" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Data Pre-processing & Data Warehousing">Data Pre-processing & Data Warehousing</label>
+                    <input type="number" name="dpdw" id="dpdw" [(ngModel)]="formData.dpdw" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Practice-I">Lab Practice-I</label>
+                    <input type="number" name="lp1" id="lp1" [(ngModel)]="formData.lp1" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="WPC-1">WPC - 1</label>
+                    <input type="number" name="wpc1" id="wpc1" [(ngModel)]="formData.wpc1" class="form-control" />
+                </div>
+
+
+            </div>
+
+            <div id="Trimester2Dsa" [hidden]="mainData.spec!='dsa' || mainData.trimester!='sem2'">
+
+                <div class="form-group">
+                    <label for="Probability and Statistics">Probability and Statistics</label>
+                    <input type="number" name="ps" id="ps" [(ngModel)]="formData.ps" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="Foundations of Data Mining">Foundations of Data Mining</label>
+                    <input type="number" name="fdm" id="fdm" [(ngModel)]="formData.fdm" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Data Storage and Management">Data Storage and Management</label>
+                    <input type="number" name="dsm" id="dsm" [(ngModel)]="formData.dsm" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Pratice-II">Lab Pratice-II</label>
+                    <input type="number" name="lp2" id="lp2" [(ngModel)]="formData.lp2" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="WPC-2">WPC - 2</label>
+                    <input type="number" name="wpc2" id="wpc2" [(ngModel)]="formData.wpc2" class="form-control" />
+                </div>
+    
+            </div>
+
+            <div id="Trimester3Dsa" [hidden]="mainData.spec!='dsa' || mainData.trimester!='sem3'">
+
+                <div class="form-group">
+                    <label for="Machine Learning">Machine Learning</label>
+                    <input type="number" name="ml" id="ml" [(ngModel)]="formData.ml" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Data Analytics with Python">Data Analytics with Python</label>
+                    <input type="number" name="dap" id="dap" [(ngModel)]="formData.dap"  class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="Cognitive Computing">Cognitive Computing</label>
+                    <input type="number" name="cc" id="cc" [(ngModel)]="formData.cc" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Practice-III">Lab Practice-III</label>
+                    <input type="number" name="lp3" id="lp3" [(ngModel)]="formData.lp3" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Seminar-I">Seminar-I</label>
+                    <input type="number" name="seminar1" id="seminar1" [(ngModel)]="formData.seminar1" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="WPC - 3">WPC - 3</label>
+                    <input type="number" name="wpc3" id="wpc3" [(ngModel)]="formData.wpc3" class="form-control" />
+                </div>
+    
+            </div>
+
+
+            <div id="Trimester1Nmcs" [hidden]="mainData.spec!='nmcs' || mainData.trimester!='sem1'">
+        
+                <div class="form-group">
+                    <label for="Research Methodology">Research Methodology</label>
+                    <input type="number" name="rm" id="rm" [(ngModel)]="formData.rm" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Algorithms">Algorithms</label>
+                    <input type="number" name="alg" id="alg" [(ngModel)]="formData.alg" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Data Pre-processing & Data Warehousing">Applied Cryptography</label>
+                    <input type="number" name="ap" id="ap" [(ngModel)]="formData.ap" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Practice-I">Lab Practice-I</label>
+                    <input type="number" name="lp1" id="lp1" [(ngModel)]="formData.lp1" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="WPC-1">WPC - 1</label>
+                    <input type="number" name="wpc1" id="wpc1" [(ngModel)]="formData.wpc1" class="form-control" />
+                </div>
+
+
+            </div>
+
+            <div id="Trimester2Nmcs" [hidden]="mainData.spec!='nmcs' || mainData.trimester!='sem2'">
+
+                <div class="form-group">
+                    <label for="Probability and Statistics">Probability and Statistics</label>
+                    <input type="number" name="ps" id="ps" [(ngModel)]="formData.ps" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="Advanced Computer Networks">Advanced Computer Networks</label>
+                    <input type="number" name="acn" id="acn" [(ngModel)]="formData.acn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Applied Machine Learning">Applied Machine Learning</label>
+                    <input type="number" name="aml" id="aml" [(ngModel)]="formData.aml" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Pratice-II">Lab Pratice-II</label>
+                    <input type="number" name="lp2" id="lp2" [(ngModel)]="formData.lp2" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="WPC-2">WPC - 2</label>
+                    <input type="number" name="wpc2" id="wpc2" [(ngModel)]="formData.wpc2" class="form-control" />
+                </div>
+    
+            </div>
+
+            <div id="Trimester3Nmcs" [hidden]="mainData.spec!='nmcs' || mainData.trimester!='sem3'">
+
+                <div class="form-group">
+                    <label for="Network Management and Performance Evaluation">Network Management and Performance Evaluation</label>
+                    <input type="number" name="nmpe" id="nmpe" [(ngModel)]="formData.nmpe" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Network Attacks and Defense Mechanism">Network Attacks and Defense Mechanism</label>
+                    <input type="number" name="nadm" id="nadm" [(ngModel)]="formData.nadm"  class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="Network Programming">Network Programming</label>
+                    <input type="number" name="np" id="np" [(ngModel)]="formData.np" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Practice-III">Lab Practice-III</label>
+                    <input type="number" name="lp3" id="lp3" [(ngModel)]="formData.lp3" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Seminar-I">Seminar-I</label>
+                    <input type="number" name="seminar1" id="seminar1" [(ngModel)]="formData.seminar1" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="WPC - 3">WPC - 3</label>
+                    <input type="number" name="wpc3" id="wpc3" [(ngModel)]="formData.wpc3" class="form-control" />
+                </div>
+        
+            </div>
+           
+
+            <div *ngIf="getTGPA" class="alert alert-success" role="alert">
+                    <i class="fas fa-check-circle"></i> &nbsp; You have got <b>{{ getTGPA }} </b> CGPA in <b>{{ (mainData.trimester=='sem1' ? 'Trimester 1':'') }} {{ (mainData.trimester=='sem2' ? 'Trimester 2':'') }} {{ (mainData.trimester=='sem3' ? 'Trimester 3':'') }} </b> 
+            </div>
+            
+            <div class="form-group">
+                <button type="button"[disabled]="(!formData.rm||!formData.alg||!formData.dpdw||!formData.wpc1||!formData.lp1) && (!formData.ps||!formData.fdm||!formData.dsm||!formData.wpc2||!formData.lp2) && (!formData.ml||!formData.dap||!formData.cc||!formData.lp3||!formData.seminar1||!formData.wpc3) && (!formData.rm||!formData.alg||!formData.ap||!formData.wpc1||!formData.lp1) && (!formData.ps||!formData.acn||!formData.aml||!formData.wpc2||!formData.lp2) && (!formData.nmpe||!formData.nadm||!formData.np||!formData.lp3||!formData.seminar1||!formData.wpc3) " class="btn btn-success btn-bg" (click)="onSubmit()" id="SubmitBtn" > <i class="fas fa-paper-plane"></i> &nbsp; Calculate </button>
+            </div>
+
+            
+
+        </form>
+
+  </div>
+</div>
+
+<div style="margin-top: 30px" class="card">
+        <h5 class="card-header bg-secondary text-white"> <i class="fas fa-user-graduate"></i> &nbsp; Cumulative - GPA Caculator [ Aggregate ]</h5>
+        <div class="card-body">
+            
+            
+            <button type="button" (click)="ResetCGPA()" class="btn btn-danger"> <i class="fas fa-redo-alt"></i> &nbsp; Reset CGPA</button>
+
+            <table style="margin-top: 40px" class="table table-bordered">
+            <thead>
+                <tr>
+                <th scope="col">Semester</th>
+                <th scope="col">GPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Trimester - 1</td>
+                    <td>{{this.storeTGPA.sem1}}</td>
+                </tr>
+                <tr>
+                    <td>Trimester - 2</td>
+                    <td>{{this.storeTGPA.sem2}}</td>
+                </tr>
+                <tr>
+                    <td>Trimester - 3</td>
+                    <td>{{this.storeTGPA.sem3}}</td>
+                </tr>
+                <tr>
+                    <th>Your CGPA</th>
+                    <td><h3>{{this.storeTGPA.total}}</h3></td>
+                </tr>
+               
+            </tbody>
+            </table>
+
+        </div>
+</div>

@@ -2,7 +2,7 @@
   <h5 class="card-header bg-primary text-white"> <i class="fas fa-user-graduate"></i> &nbsp; Trimester - GPA Caculator</h5>
   <div class="card-body">
     
-        <form>
+        <form #f="ngForm">
             <!-- (change)="filterForeCasts($event.target.value)" -->
             <div class="form-group">
                 <label>Specialization</label>
@@ -10,6 +10,7 @@
                     <option value="Select a specialization">Select a specialization</option>
                     <option value="dsa">Data Science & Analytics</option>
                     <option value="nmcs">Network Management & Cyber Security</option>
+                    <option value="cns">Communication Networks and Software</option>
                 </select>
             </div>
 
@@ -210,14 +211,107 @@
                 </div>
         
             </div>
+
+            <div id="Trimester1Cns" [hidden]="mainData.spec!='cns' || mainData.trimester!='sem1'">
+        
+                <div class="form-group">
+                    <label for="Research Methodology">Research Methodology</label>
+                    <input type="number" name="rm" id="rm" [(ngModel)]="formData.rm" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Advanced Communication Networks">Advanced Communication Networks</label>
+                    <input type="number" name="acn" id="acn" [(ngModel)]="formData.acn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Statistical Signal Analysis">Statistical Signal Analysis</label>
+                    <input type="number" name="ssa" id="ssa" [(ngModel)]="formData.ssa" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Practice-I">Lab Practice-I</label>
+                    <input type="number" name="lp1" id="lp1" [(ngModel)]="formData.lp1" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="WPC-1">WPC - 1</label>
+                    <input type="number" name="wpc1" id="wpc1" [(ngModel)]="formData.wpc1" class="form-control" />
+                </div>
+
+
+            </div>
+
+            <div id="Trimester2Cns" [hidden]="mainData.spec!='cns' || mainData.trimester!='sem2'">
+
+                <div class="form-group">
+                    <label for="Wireless and Cellular Communications">Wireless and Cellular Communications</label>
+                    <input type="number" name="wcc" id="wcc" [(ngModel)]="formData.wcc" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="Routing Algorithms and Protocols">Routing Algorithms and Protocols</label>
+                    <input type="number" name="rap" id="rap" [(ngModel)]="formData.rap" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Ad Hoc and Sensor Networks">Ad Hoc and Sensor Networks</label>
+                    <input type="number" name="asn" id="asn" [(ngModel)]="formData.asn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Pratice-II">Lab Pratice-II</label>
+                    <input type="number" name="lp2" id="lp2" [(ngModel)]="formData.lp2" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="WPC-2">WPC - 2</label>
+                    <input type="number" name="wpc2" id="wpc2" [(ngModel)]="formData.wpc2" class="form-control" />
+                </div>
+    
+            </div>
+
+            <div id="Trimester3Cns" [hidden]="mainData.spec!='cns' || mainData.trimester!='sem3'">
+
+                <div class="form-group">
+                    <label for="Network and Service Management">Network and Service Management</label>
+                    <input type="number" name="nsm" id="nsm" [(ngModel)]="formData.nsm" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Advanced 4G & 5G Wireless Technologies">Advanced 4G & 5G Wireless Technologies</label>
+                    <input type="number" name="aw" id="aw" [(ngModel)]="formData.aw"  class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="Photonic Networks">Photonic Networks</label>
+                    <input type="number" name="pn" id="pn" [(ngModel)]="formData.pn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Lab Practice-III">Lab Practice-III</label>
+                    <input type="number" name="lp3" id="lp3" [(ngModel)]="formData.lp3" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Seminar-I">Seminar-I</label>
+                    <input type="number" name="seminar1" id="seminar1" [(ngModel)]="formData.seminar1" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="WPC - 3">WPC - 3</label>
+                    <input type="number" name="wpc3" id="wpc3" [(ngModel)]="formData.wpc3" class="form-control" />
+                </div>
+    
+            </div>
            
 
             <div *ngIf="getTGPA" class="alert alert-success" role="alert">
-                    <i class="fas fa-check-circle"></i> &nbsp; You have got <b>{{ getTGPA }} </b> CGPA in <b>{{ (mainData.trimester=='sem1' ? 'Trimester 1':'') }} {{ (mainData.trimester=='sem2' ? 'Trimester 2':'') }} {{ (mainData.trimester=='sem3' ? 'Trimester 3':'') }} </b> 
+                    <i class="fas fa-check-circle"></i> &nbsp; You have got <b>{{ getTGPA }} </b> TGPA in <b>{{ (mainData.trimester=='sem1' ? 'Trimester 1':'') }} {{ (mainData.trimester=='sem2' ? 'Trimester 2':'') }} {{ (mainData.trimester=='sem3' ? 'Trimester 3':'') }} </b> 
             </div>
             
             <div class="form-group">
-                <button type="button"[disabled]="(!formData.rm||!formData.alg||!formData.dpdw||!formData.wpc1||!formData.lp1) && (!formData.ps||!formData.fdm||!formData.dsm||!formData.wpc2||!formData.lp2) && (!formData.ml||!formData.dap||!formData.cc||!formData.lp3||!formData.seminar1||!formData.wpc3) && (!formData.rm||!formData.alg||!formData.ap||!formData.wpc1||!formData.lp1) && (!formData.ps||!formData.acn||!formData.aml||!formData.wpc2||!formData.lp2) && (!formData.nmpe||!formData.nadm||!formData.np||!formData.lp3||!formData.seminar1||!formData.wpc3) " class="btn btn-success btn-bg" (click)="onSubmit()" id="SubmitBtn" > <i class="fas fa-paper-plane"></i> &nbsp; Calculate </button>
+                <button type="button"[disabled]="(!formData.rm||!formData.alg||!formData.dpdw||!formData.wpc1||!formData.lp1) && (!formData.ps||!formData.fdm||!formData.dsm||!formData.wpc2||!formData.lp2)  && (!formData.ml||!formData.dap||!formData.cc||!formData.lp3||!formData.seminar1||!formData.wpc3) && (!formData.rm||!formData.alg||!formData.ap||!formData.wpc1||!formData.lp1) && (!formData.ps||!formData.acn||!formData.aml||!formData.wpc2||!formData.lp2) && (!formData.nmpe||!formData.nadm||!formData.np||!formData.lp3||!formData.seminar1||!formData.wpc3) && (!formData.rm||!formData.acn||!formData.ssa||!formData.wpc1||!formData.lp1) && (!formData.wcc||!formData.rap||!formData.asn||!formData.wpc2||!formData.lp2) && (!formData.nsm||!formData.aw||!formData.pn||!formData.lp3||!formData.seminar1||!formData.wpc3)" class="btn btn-success btn-bg" (click)="onSubmit()" id="SubmitBtn" > <i class="fas fa-paper-plane"></i> &nbsp; Calculate </button>
             </div>
 
             
@@ -238,7 +332,7 @@
             <thead>
                 <tr>
                 <th scope="col">Semester</th>
-                <th scope="col">GPA</th>
+                <th scope="col">TGPA</th>
                 </tr>
             </thead>
             <tbody>

@@ -9,7 +9,7 @@ export class CalculateTotalPointerService {
 
   getPointer: number;
 
-  subcredits = { rm: 2, alg: 2,dpdw: 2,wpc1: 2,lp1:3,ps:2,fdm:2,dsm:2,lp2:3,wpc2:2,ml:2,dap:2,cc:2,lp3:3,seminar1:2,wpc3:2,sem1:11,sem2:11,sem3:13,ap:2,acn:2,aml:2,nmpe:2,nadm:2,np:2 };
+  subcredits = { rm: 2, alg: 2,dpdw: 2,wpc1: 2,lp1:3,ps:2,fdm:2,dsm:2,lp2:3,wpc2:2,ml:2,dap:2,cc:2,lp3:3,seminar1:2,wpc3:2,sem1:11,sem2:11,sem3:13,ap:2,acn:2,aml:2,nmpe:2,nadm:2,np:2,ssa:2,wcc:2,rap:2,asn:2,nsm:2, aw:2,pn:2 };
 
   calculatePointer(getformdata:any,getmaindata:any)
   {
